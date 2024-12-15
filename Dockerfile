@@ -37,7 +37,7 @@ RUN pip install torch==2.0.0 -i https://pypi.tuna.tsinghua.edu.cn/simple torch-2
 RUN pip install torchaudio==2.0.0 -i https://pypi.tuna.tsinghua.edu.cn/simple torchaudio-2.0.0+cu118-cp310-cp310-linux_x86_64.whl
 
 # Clean up unnecessary files
-RUN rm -rf .git
+RUN rm -rf .git *.whl
 
 # Upgrade pip and install basic dependencies
 RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple

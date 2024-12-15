@@ -28,6 +28,7 @@ def download_video_ytdlp(url, save_path='output', resolution='1080', cutoff_time
             'key': 'FFmpegThumbnailsConvertor',
             'format': 'jpg',
         }],
+        'proxy':'socks5://127.0.0.1:10808',
     }
 
     # Update yt-dlp to avoid download failure due to API changes
