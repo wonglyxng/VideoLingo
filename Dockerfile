@@ -32,8 +32,9 @@ RUN git clone https://github.com/Huanshere/VideoLingo.git .
 # Install PyTorch and torchaudio
 #RUN pip install torch==2.0.0 torchaudio==2.0.0 --index-url https://download.pytorch.org/whl/cu118
 
-COPY torch-2.0.0+cu118-cp310-cp310-linux_x86_64.whl .
-RUN pip install torch==2.0.0 torchaudio==2.0.0 torch-2.0.0+cu118-cp310-cp310-linux_x86_64.whl
+COPY *.whl .
+RUN pip install torch==2.0.0 -i https://pypi.tuna.tsinghua.edu.cn/simple torch-2.0.0+cu118-cp310-cp310-linux_x86_64.whl
+RUN pip install torchaudio==2.0.0 -i https://pypi.tuna.tsinghua.edu.cn/simple torchaudio-2.0.0+cu118-cp310-cp310-linux_x86_64.whl
 
 # Clean up unnecessary files
 RUN rm -rf .git
